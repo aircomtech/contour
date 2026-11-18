@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ArrowRight, CheckCircle2, ZoomIn, ShieldCheck, Award } from 'lucide-react';
 import { coreValuesData } from '@/data/company';
 import ImageLightbox from './ImageLightbox';
+import ScrollReveal from './ScrollReveal';
 
 export default function AboutSection() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -17,48 +18,51 @@ export default function AboutSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Column: Grand Image from image copy 9 */}
             <div className="lg:col-span-6 relative">
-              <div
-                onClick={() => setLightboxOpen(true)}
-                className="relative h-[320px] sm:h-[400px] lg:h-[460px] rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-100 group cursor-pointer"
-              >
-                <Image
-                  src="/images/about/about-grand.jpg"
-                  alt="Contour Steel Engineering advanced PEB warehouse facility"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                {/* Subtle gradient scrim */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-75 group-hover:opacity-60 transition-opacity" />
+              <ScrollReveal direction="left" duration={0.7}>
+                <div
+                  onClick={() => setLightboxOpen(true)}
+                  className="relative h-[320px] sm:h-[400px] lg:h-[460px] rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-100 group cursor-pointer"
+                >
+                  <Image
+                    src="/images/about/about-grand.jpg"
+                    alt="Contour Steel Engineering advanced PEB warehouse facility"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  {/* Subtle gradient scrim */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-75 group-hover:opacity-60 transition-opacity" />
 
-                {/* Top Badge */}
-                <div className="absolute top-4 left-4 bg-navy-950/90 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-contourRed" />
-                  <span>Advanced Industrial Infrastructure</span>
+                  {/* Top Badge */}
+                  <div className="absolute top-4 left-4 bg-navy-950/90 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-contourRed" />
+                    <span>Advanced Industrial Infrastructure</span>
+                  </div>
+
+                  {/* Click to Zoom Pill */}
+                  <div className="absolute top-4 right-4 bg-white/80 hover:bg-white text-navy-950 p-2 rounded-full shadow transition-all group-hover:scale-110">
+                    <ZoomIn className="w-4 h-4 text-navy-950" />
+                  </div>
+
+                  {/* Bottom Overlay Label */}
+                  <div className="absolute bottom-5 left-5 right-5 text-white">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-contourRed bg-white/95 px-2.5 py-0.5 rounded shadow">
+                      Engineering Precision
+                    </span>
+                    <p className="text-base sm:text-lg font-bold mt-1 text-white text-shadow">
+                      High-Bay Pre-Engineered Steel Building &amp; Fabrication Hub
+                    </p>
+                  </div>
                 </div>
 
-                {/* Click to Zoom Pill */}
-                <div className="absolute top-4 right-4 bg-white/80 hover:bg-white text-navy-950 p-2 rounded-full shadow transition-all group-hover:scale-110">
-                  <ZoomIn className="w-4 h-4 text-navy-950" />
-                </div>
-
-                {/* Bottom Overlay Label */}
-                <div className="absolute bottom-5 left-5 right-5 text-white">
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-contourRed bg-white/95 px-2.5 py-0.5 rounded shadow">
-                    Engineering Precision
-                  </span>
-                  <p className="text-base sm:text-lg font-bold mt-1 text-white text-shadow">
-                    High-Bay Pre-Engineered Steel Building &amp; Fabrication Hub
-                  </p>
-                </div>
-              </div>
-
-              {/* Decorative Accent Frame */}
-              <div className="absolute -bottom-3 -right-3 w-40 h-40 border-b-4 border-r-4 border-contourRed/40 rounded-br-2xl -z-10 hidden sm:block" />
+                {/* Decorative Accent Frame */}
+                <div className="absolute -bottom-3 -right-3 w-40 h-40 border-b-4 border-r-4 border-contourRed/40 rounded-br-2xl -z-10 hidden sm:block" />
+              </ScrollReveal>
             </div>
 
             {/* Right Column: Heading, Description & Core Values */}
             <div className="lg:col-span-6">
+              <ScrollReveal direction="right" duration={0.7} delay={0.15}>
               <div className="mb-2">
                 <span className="text-xs font-bold tracking-widest text-contourRed uppercase">
                   About Contour Steel Engineering
@@ -110,7 +114,8 @@ export default function AboutSection() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </div>
+            </ScrollReveal>
+          </div>
           </div>
         </div>
       </section>

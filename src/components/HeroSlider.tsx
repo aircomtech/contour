@@ -81,7 +81,7 @@ export default function HeroSlider() {
         onTouchStart={() => setIsPaused(true)}
         onTouchEnd={() => setIsPaused(false)}
       >
-        <div className="relative min-h-[480px] sm:min-h-[560px] lg:min-h-[640px] flex items-center">
+        <div className="relative min-h-[500px] sm:min-h-[580px] lg:min-h-[660px] flex items-center pb-14 sm:pb-18 lg:pb-22">
           {slides.map((slide, index) => {
             const isActive = index === currentSlide;
             return (
@@ -171,8 +171,8 @@ export default function HeroSlider() {
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
-          {/* 3 Pagination Indicators */}
-          <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
+          {/* 3 Pagination Indicators (Positioned Safely Above Floating White Box) */}
+          <div className="absolute bottom-12 sm:bottom-16 lg:bottom-20 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
             {slides.map((_, index) => (
               <button
                 key={index}
@@ -189,51 +189,51 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* 2. Statistics Panel – WHITE/LIGHT BACKGROUND (image copy 26 - ZERO BLACK STRIP) */}
-      <div className="relative bg-slate-50 pt-0 pb-6 sm:pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -translate-y-10 sm:-translate-y-12 lg:-translate-y-14">
-          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-[0_20px_50px_rgba(11,34,64,0.12)] border border-slate-200 p-6 sm:p-8 lg:p-10 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
+      {/* 2. Statistics Panel – WHITE BOX FLOATING OVER HERO SECTION (image copy 30, desktop & mobile) */}
+      <div className="relative bg-slate-50 pt-0 pb-6 sm:pb-8 w-full max-w-full overflow-hidden">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 -mt-7 sm:-mt-10 lg:-mt-14 relative z-30">
+          <div className="bg-white rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-[0_15px_45px_rgba(11,34,64,0.16)] border border-slate-200/90 p-3 sm:p-6 lg:p-8 grid grid-cols-3 divide-x divide-slate-200">
             {/* Stat 1: Years of Experience */}
-            <div className="flex items-center gap-4 sm:gap-6 py-4 sm:py-2 px-3 sm:px-6 justify-center sm:justify-start group">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-navy-50 group-hover:bg-navy-950 text-navy-900 flex items-center justify-center shrink-0 transition-colors duration-300 shadow-sm border border-slate-200">
-                <Calendar className="w-8 h-8 sm:w-10 sm:h-10 text-contourRed group-hover:text-white transition-colors" />
+            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 lg:gap-6 py-1 sm:py-2 px-1.5 sm:px-4 lg:px-6 justify-center sm:justify-start group text-center sm:text-left">
+              <div className="w-8 h-8 sm:w-14 sm:h-14 lg:w-18 lg:h-18 rounded-lg sm:rounded-2xl bg-navy-50 group-hover:bg-navy-950 text-navy-900 flex items-center justify-center shrink-0 transition-colors duration-300 shadow-sm border border-slate-200">
+                <Calendar className="w-4 h-4 sm:w-7 sm:h-7 lg:w-9 lg:h-9 text-contourRed group-hover:text-white transition-colors" />
               </div>
-              <div>
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy-950 tracking-tight leading-none mb-1.5 flex items-baseline">
+              <div className="min-w-0">
+                <div className="text-base sm:text-3xl lg:text-4xl xl:text-5xl font-black text-navy-950 tracking-tight leading-none mb-1 flex items-baseline justify-center sm:justify-start">
                   <AnimatedNumber value={19} suffix="+" />
                 </div>
-                <div className="text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider text-slate-700">
+                <div className="text-[9px] sm:text-xs lg:text-sm font-bold uppercase tracking-tight sm:tracking-wider text-slate-700 leading-tight">
                   Years of Experience
                 </div>
               </div>
             </div>
 
             {/* Stat 2: Structures Delivered */}
-            <div className="flex items-center gap-4 sm:gap-6 py-4 sm:py-2 px-3 sm:px-6 justify-center sm:justify-start group">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-navy-50 group-hover:bg-navy-950 text-navy-900 flex items-center justify-center shrink-0 transition-colors duration-300 shadow-sm border border-slate-200">
-                <Building className="w-8 h-8 sm:w-10 sm:h-10 text-contourRed group-hover:text-white transition-colors" />
+            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 lg:gap-6 py-1 sm:py-2 px-1.5 sm:px-4 lg:px-6 justify-center sm:justify-start group text-center sm:text-left">
+              <div className="w-8 h-8 sm:w-14 sm:h-14 lg:w-18 lg:h-18 rounded-lg sm:rounded-2xl bg-navy-50 group-hover:bg-navy-950 text-navy-900 flex items-center justify-center shrink-0 transition-colors duration-300 shadow-sm border border-slate-200">
+                <Building className="w-4 h-4 sm:w-7 sm:h-7 lg:w-9 lg:h-9 text-contourRed group-hover:text-white transition-colors" />
               </div>
-              <div>
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy-950 tracking-tight leading-none mb-1.5 flex items-baseline">
+              <div className="min-w-0">
+                <div className="text-base sm:text-3xl lg:text-4xl xl:text-5xl font-black text-navy-950 tracking-tight leading-none mb-1 flex items-baseline justify-center sm:justify-start">
                   <AnimatedNumber value={1100} suffix="+" />
                 </div>
-                <div className="text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider text-slate-700">
+                <div className="text-[9px] sm:text-xs lg:text-sm font-bold uppercase tracking-tight sm:tracking-wider text-slate-700 leading-tight">
                   Structures Delivered
                 </div>
               </div>
             </div>
 
             {/* Stat 3: Sq. Ft. of PEB Projects */}
-            <div className="flex items-center gap-4 sm:gap-6 py-4 sm:py-2 px-3 sm:px-6 justify-center sm:justify-start group">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-navy-50 group-hover:bg-navy-950 text-navy-900 flex items-center justify-center shrink-0 transition-colors duration-300 shadow-sm border border-slate-200">
-                <Maximize2 className="w-8 h-8 sm:w-10 sm:h-10 text-contourRed group-hover:text-white transition-colors" />
+            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 lg:gap-6 py-1 sm:py-2 px-1.5 sm:px-4 lg:px-6 justify-center sm:justify-start group text-center sm:text-left">
+              <div className="w-8 h-8 sm:w-14 sm:h-14 lg:w-18 lg:h-18 rounded-lg sm:rounded-2xl bg-navy-50 group-hover:bg-navy-950 text-navy-900 flex items-center justify-center shrink-0 transition-colors duration-300 shadow-sm border border-slate-200">
+                <Maximize2 className="w-4 h-4 sm:w-7 sm:h-7 lg:w-9 lg:h-9 text-contourRed group-hover:text-white transition-colors" />
               </div>
-              <div>
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy-950 tracking-tight leading-none mb-1.5 flex items-baseline">
+              <div className="min-w-0">
+                <div className="text-base sm:text-3xl lg:text-4xl xl:text-5xl font-black text-navy-950 tracking-tight leading-none mb-1 flex items-baseline justify-center sm:justify-start">
                   <AnimatedNumber value={30} suffix=" Million" />
                 </div>
-                <div className="text-xs sm:text-sm lg:text-base font-bold uppercase tracking-wider text-slate-700">
-                  Sq. Ft. of PEB Projects
+                <div className="text-[9px] sm:text-xs lg:text-sm font-bold uppercase tracking-tight sm:tracking-wider text-slate-700 leading-tight">
+                  Sq. Ft. PEB Projects
                 </div>
               </div>
             </div>

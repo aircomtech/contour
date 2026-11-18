@@ -69,27 +69,27 @@ export default function Navbar() {
     <>
       {/* Sticky Solid Dark Navy Header (Always Sticks on Scroll, 100% Opaque Solid Background) */}
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-200 bg-[#061325] border-b border-navy-800 ${
-          isScrolled ? 'py-2 shadow-2xl' : 'py-2.5 sm:py-3.5 shadow-lg'
+        className={`sticky top-0 z-50 w-full max-w-full overflow-hidden xl:overflow-visible transition-all duration-200 bg-[#061325] border-b border-navy-800 ${
+          isScrolled ? 'py-2 shadow-2xl' : 'py-2.5 sm:py-3 shadow-lg'
         }`}
       >
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 lg:gap-4">
-          {/* Left: Prominent, Clearly Visible Logo (Increased Size, Zero Blank Padding) */}
+        <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 xl:gap-4 w-full">
+          {/* Left: Prominent, Clearly Visible Logo (Scaled Appropriately) */}
           <Link href="/" className="flex items-center shrink-0 group">
-            <div className="relative h-12 w-44 sm:h-14 sm:w-56 lg:h-14 lg:w-60 xl:h-16 xl:w-64 transition-transform duration-200 group-hover:scale-[1.02]">
+            <div className="relative h-11 w-40 sm:h-13 sm:w-52 xl:h-14 xl:w-56 2xl:h-15 2xl:w-60 transition-transform duration-200 group-hover:scale-[1.02]">
               <Image
                 src="/images/logo-tight-white.png"
                 alt="Contour Steel Engineering India (P) Ltd."
                 fill
                 priority
-                sizes="(max-width: 640px) 176px, (max-width: 1024px) 224px, 256px"
+                sizes="(max-width: 640px) 160px, (max-width: 1280px) 208px, 240px"
                 className="object-contain object-left"
               />
             </div>
           </Link>
 
           {/* Center: Desktop Navigation Links (ALL IN ONE SINGLE LINE - whitespace-nowrap) */}
-          <nav className="hidden lg:flex items-center space-x-0.5 xl:space-x-1 shrink">
+          <nav className="hidden xl:flex items-center space-x-0.5 2xl:space-x-1 shrink">
             {navLinks.map((link) => {
               const isActive =
                 link.href === '/'
@@ -229,16 +229,16 @@ export default function Navbar() {
             {/* Red Get a Quote CTA Button */}
             <button
               onClick={() => setIsQuoteOpen(true)}
-              className="bg-contourRed hover:bg-contourRed-800 text-white text-xs font-bold uppercase tracking-wider px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-all duration-200 flex items-center gap-1.5 shadow-lg hover:shadow-xl active:scale-95 whitespace-nowrap"
+              className="bg-contourRed hover:bg-contourRed-800 text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg transition-all duration-200 flex items-center gap-1 sm:gap-1.5 shadow-lg hover:shadow-xl active:scale-95 whitespace-nowrap shrink-0"
             >
               <span>Get a Quote</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
 
-            {/* Mobile Hamburger Menu Button */}
+            {/* Mobile / Tablet Hamburger Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-slate-200 hover:text-white rounded-lg hover:bg-navy-850 focus:outline-none"
+              className="xl:hidden p-2 text-slate-200 hover:text-white rounded-lg hover:bg-navy-850 focus:outline-none"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -248,7 +248,7 @@ export default function Navbar() {
 
         {/* Mobile Slide-in Drawer Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-sm animate-fadeIn">
+          <div className="xl:hidden fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-sm animate-fadeIn">
             <div className="absolute top-0 right-0 bottom-0 w-4/5 max-w-sm bg-navy-950 text-white shadow-2xl flex flex-col border-l border-navy-800">
               {/* Drawer Header */}
               <div className="p-4 bg-navy-900 flex items-center justify-between border-b border-navy-800">

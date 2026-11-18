@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ArrowRight, ChevronRight, ZoomIn } from 'lucide-react';
 import { projectsData } from '@/data/projects';
 import ImageLightbox from './ImageLightbox';
+import ScrollReveal from './ScrollReveal';
 
 export default function ProjectsSection() {
   const [selectedImage, setSelectedImage] = useState<{
@@ -20,36 +21,42 @@ export default function ProjectsSection() {
       <section className="py-12 md:py-16 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-10 gap-4">
-            <div>
-              <span className="text-xs font-bold tracking-widest text-contourRed uppercase">
-                Proven Track Record
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-navy-950 tracking-tight mt-1 mb-2">
-                Our Projects
-              </h2>
-              <p className="text-slate-600 text-xs sm:text-sm">
-                Delivering Excellence Across India with 1,100+ Completed Steel Structures
-              </p>
-              <div className="w-16 h-1 bg-contourRed mt-3 rounded-full" />
-            </div>
+          <ScrollReveal direction="up" duration={0.6}>
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-10 gap-4">
+              <div>
+                <span className="text-xs font-bold tracking-widest text-contourRed uppercase">
+                  Proven Track Record
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-navy-950 tracking-tight mt-1 mb-2">
+                  Our Projects
+                </h2>
+                <p className="text-slate-600 text-xs sm:text-sm">
+                  Delivering Excellence Across India with 1,100+ Completed Steel Structures
+                </p>
+                <div className="w-16 h-1 bg-contourRed mt-3 rounded-full" />
+              </div>
 
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-contourRed hover:bg-contourRed-800 text-white rounded-lg font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-all self-start sm:self-auto active:scale-95"
-            >
-              <span>View All Projects</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-contourRed hover:bg-contourRed-800 text-white rounded-lg font-bold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-all self-start sm:self-auto active:scale-95"
+              >
+                <span>View All Projects</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </ScrollReveal>
 
           {/* 4 Grand Projects Grid (image copy 16, 17, 18, 19) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {projectsData.map((project) => (
-              <div
+            {projectsData.map((project, index) => (
+              <ScrollReveal
                 key={project.id}
-                className="group bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between"
+                direction="up"
+                delay={index * 0.1}
+                duration={0.6}
+                className="h-full"
               >
+                <div className="group bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between h-full">
                 <div>
                   {/* Project Image with Quick Lightbox Zoom */}
                   <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-navy-950">
@@ -106,17 +113,18 @@ export default function ProjectsSection() {
                   </div>
                 </div>
 
-                {/* Bottom Link */}
-                <div className="p-4 sm:p-5 pt-0">
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="w-full inline-flex items-center justify-between text-xs font-bold text-navy-900 group-hover:text-contourRed py-2 border-t border-slate-100 transition-colors"
-                  >
-                    <span>View Project Details</span>
-                    <ChevronRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  {/* Bottom Link */}
+                  <div className="p-4 sm:p-5 pt-0">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="w-full inline-flex items-center justify-between text-xs font-bold text-navy-900 group-hover:text-contourRed py-2 border-t border-slate-100 transition-colors"
+                    >
+                      <span>View Project Details</span>
+                      <ChevronRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
