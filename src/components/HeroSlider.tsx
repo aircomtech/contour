@@ -72,16 +72,16 @@ export default function HeroSlider() {
   }, [isPaused, currentSlide]);
 
   return (
-    <div className="w-full">
-      {/* 1. Hero Viewport */}
+    <section className="relative w-full bg-slate-950">
+      {/* 1. Hero Viewport with Image Slider (overflow-hidden strictly scoped to inner slider images) */}
       <div
-        className="relative w-full bg-slate-950 overflow-hidden"
+        className="relative w-full overflow-hidden min-h-[540px] sm:min-h-[620px] lg:min-h-[700px] flex items-center pb-24 sm:pb-28 lg:pb-32"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onTouchStart={() => setIsPaused(true)}
         onTouchEnd={() => setIsPaused(false)}
       >
-        <div className="relative min-h-[500px] sm:min-h-[580px] lg:min-h-[660px] flex items-center pb-14 sm:pb-18 lg:pb-22">
+        <div className="relative w-full min-h-[540px] sm:min-h-[620px] lg:min-h-[700px] flex items-center">
           {slides.map((slide, index) => {
             const isActive = index === currentSlide;
             return (
@@ -111,7 +111,7 @@ export default function HeroSlider() {
                 {/* Slide Content: PURE CLEAN TEXT DIRECTLY ON SECTION (NO PATCHWORK BOX) */}
                 <div className="absolute inset-0 flex items-center">
                   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                    <div className="max-w-2xl text-left text-white py-8 sm:py-12">
+                    <div className="max-w-2xl text-left text-white py-8 sm:py-12 pb-24 sm:pb-28 lg:pb-32">
                       {/* Tagline */}
                       <div className="mb-2 sm:mb-3">
                         <span className="inline-block text-xs sm:text-sm font-black tracking-[0.2em] uppercase text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] border-b-2 border-contourRed pb-1">
@@ -172,7 +172,7 @@ export default function HeroSlider() {
           </button>
 
           {/* 3 Pagination Indicators (Positioned Safely Above Floating White Box) */}
-          <div className="absolute bottom-12 sm:bottom-16 lg:bottom-20 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
+          <div className="absolute bottom-20 sm:bottom-24 lg:bottom-28 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
             {slides.map((_, index) => (
               <button
                 key={index}
@@ -189,50 +189,50 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      {/* 2. Statistics Panel – WHITE BOX FLOATING OVER HERO SECTION (image copy 30, desktop & mobile) */}
-      <div className="relative bg-slate-50 pt-0 pb-6 sm:pb-8 w-full max-w-full overflow-hidden">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 -mt-7 sm:-mt-10 lg:-mt-14 relative z-30">
-          <div className="bg-white rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-[0_15px_45px_rgba(11,34,64,0.16)] border border-slate-200/90 p-3 sm:p-6 lg:p-8 grid grid-cols-3 divide-x divide-slate-200">
+      {/* 2. Floating Statistics Panel – EXACTLY 50% OVERLAPPING HERO BOTTOM BOUNDARY */}
+      <div className="absolute left-0 right-0 bottom-0 translate-y-1/2 z-30 pointer-events-none">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pointer-events-auto">
+          <div className="bg-white rounded-2xl sm:rounded-3xl shadow-[0_20px_50px_rgba(11,34,64,0.18)] border border-slate-100/90 p-3.5 sm:p-5 lg:p-7 grid grid-cols-3 divide-x divide-slate-200">
             {/* Stat 1: Years of Experience */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 lg:gap-6 py-1 sm:py-2 px-1.5 sm:px-4 lg:px-6 justify-center sm:justify-start group text-center sm:text-left">
-              <div className="w-8 h-8 sm:w-14 sm:h-14 lg:w-18 lg:h-18 rounded-lg sm:rounded-2xl bg-navy-50 group-hover:bg-navy-950 text-navy-900 flex items-center justify-center shrink-0 transition-colors duration-300 shadow-sm border border-slate-200">
-                <Calendar className="w-4 h-4 sm:w-7 sm:h-7 lg:w-9 lg:h-9 text-contourRed group-hover:text-white transition-colors" />
+            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-3.5 lg:gap-5 py-1 sm:py-2 px-1 sm:px-3 lg:px-6 justify-center sm:justify-start group text-center sm:text-left">
+              <div className="w-8 h-8 sm:w-11 sm:h-11 lg:w-13 lg:h-13 rounded-xl border border-red-100 bg-red-50/60 text-contourRed flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-105">
+                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-contourRed stroke-[2]" />
               </div>
               <div className="min-w-0">
-                <div className="text-base sm:text-3xl lg:text-4xl xl:text-5xl font-black text-navy-950 tracking-tight leading-none mb-1 flex items-baseline justify-center sm:justify-start">
+                <div className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-black text-navy-950 tracking-tight leading-none mb-1 flex items-baseline justify-center sm:justify-start">
                   <AnimatedNumber value={19} suffix="+" />
                 </div>
-                <div className="text-[9px] sm:text-xs lg:text-sm font-bold uppercase tracking-tight sm:tracking-wider text-slate-700 leading-tight">
+                <div className="text-[9px] sm:text-[11px] lg:text-xs font-bold uppercase tracking-wider text-slate-600 leading-tight">
                   Years of Experience
                 </div>
               </div>
             </div>
 
             {/* Stat 2: Structures Delivered */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 lg:gap-6 py-1 sm:py-2 px-1.5 sm:px-4 lg:px-6 justify-center sm:justify-start group text-center sm:text-left">
-              <div className="w-8 h-8 sm:w-14 sm:h-14 lg:w-18 lg:h-18 rounded-lg sm:rounded-2xl bg-navy-50 group-hover:bg-navy-950 text-navy-900 flex items-center justify-center shrink-0 transition-colors duration-300 shadow-sm border border-slate-200">
-                <Building className="w-4 h-4 sm:w-7 sm:h-7 lg:w-9 lg:h-9 text-contourRed group-hover:text-white transition-colors" />
+            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-3.5 lg:gap-5 py-1 sm:py-2 px-1 sm:px-3 lg:px-6 justify-center sm:justify-start group text-center sm:text-left">
+              <div className="w-8 h-8 sm:w-11 sm:h-11 lg:w-13 lg:h-13 rounded-xl border border-red-100 bg-red-50/60 text-contourRed flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-105">
+                <Building className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-contourRed stroke-[2]" />
               </div>
               <div className="min-w-0">
-                <div className="text-base sm:text-3xl lg:text-4xl xl:text-5xl font-black text-navy-950 tracking-tight leading-none mb-1 flex items-baseline justify-center sm:justify-start">
+                <div className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-black text-navy-950 tracking-tight leading-none mb-1 flex items-baseline justify-center sm:justify-start">
                   <AnimatedNumber value={1100} suffix="+" />
                 </div>
-                <div className="text-[9px] sm:text-xs lg:text-sm font-bold uppercase tracking-tight sm:tracking-wider text-slate-700 leading-tight">
+                <div className="text-[9px] sm:text-[11px] lg:text-xs font-bold uppercase tracking-wider text-slate-600 leading-tight">
                   Structures Delivered
                 </div>
               </div>
             </div>
 
             {/* Stat 3: Sq. Ft. of PEB Projects */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 lg:gap-6 py-1 sm:py-2 px-1.5 sm:px-4 lg:px-6 justify-center sm:justify-start group text-center sm:text-left">
-              <div className="w-8 h-8 sm:w-14 sm:h-14 lg:w-18 lg:h-18 rounded-lg sm:rounded-2xl bg-navy-50 group-hover:bg-navy-950 text-navy-900 flex items-center justify-center shrink-0 transition-colors duration-300 shadow-sm border border-slate-200">
-                <Maximize2 className="w-4 h-4 sm:w-7 sm:h-7 lg:w-9 lg:h-9 text-contourRed group-hover:text-white transition-colors" />
+            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-3.5 lg:gap-5 py-1 sm:py-2 px-1 sm:px-3 lg:px-6 justify-center sm:justify-start group text-center sm:text-left">
+              <div className="w-8 h-8 sm:w-11 sm:h-11 lg:w-13 lg:h-13 rounded-xl border border-red-100 bg-red-50/60 text-contourRed flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-105">
+                <Maximize2 className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-contourRed stroke-[2]" />
               </div>
               <div className="min-w-0">
-                <div className="text-base sm:text-3xl lg:text-4xl xl:text-5xl font-black text-navy-950 tracking-tight leading-none mb-1 flex items-baseline justify-center sm:justify-start">
+                <div className="text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-black text-navy-950 tracking-tight leading-none mb-1 flex items-baseline justify-center sm:justify-start">
                   <AnimatedNumber value={30} suffix=" Million" />
                 </div>
-                <div className="text-[9px] sm:text-xs lg:text-sm font-bold uppercase tracking-tight sm:tracking-wider text-slate-700 leading-tight">
+                <div className="text-[9px] sm:text-[11px] lg:text-xs font-bold uppercase tracking-wider text-slate-600 leading-tight">
                   Sq. Ft. PEB Projects
                 </div>
               </div>
@@ -240,6 +240,6 @@ export default function HeroSlider() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

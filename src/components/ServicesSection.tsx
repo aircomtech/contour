@@ -40,7 +40,7 @@ export default function ServicesSection() {
 
   return (
     <>
-      <section className="py-12 md:py-16 bg-slate-50 relative">
+      <section className="pt-20 sm:pt-24 lg:pt-28 pb-12 md:pb-16 bg-slate-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <ScrollReveal direction="up" duration={0.6}>
