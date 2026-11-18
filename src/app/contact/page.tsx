@@ -19,21 +19,20 @@ export default function ContactPage() {
         subtitle="Connect with Our Senior Engineering Team for Project Consultation, Preliminary Layouts, and Competitive Estimations."
         tagline="Get in Touch"
         breadcrumbs={[{ label: 'Contact Us' }]}
-        bgImage="/images/cta-bg.jpg"
       />
 
-      <section className="py-16 md:py-20 bg-slate-50">
+      <section className="py-12 md:py-16 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             {/* Left Column: Contact Form (7 cols) */}
-            <div className="lg:col-span-7 bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-sm">
+            <div className="lg:col-span-7 bg-white p-5 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
               <span className="text-xs font-bold tracking-widest text-contourRed uppercase">
                 Enquiry Form
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-900 tracking-tight mt-1 mb-2">
+              <h2 className="text-2xl sm:text-3xl font-black text-navy-950 tracking-tight mt-1 mb-2">
                 Send Us a Message
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600 mb-6">
+              <p className="text-xs sm:text-sm text-slate-600 mb-5">
                 Fill out the form below with your project requirements and our engineering department will
                 respond promptly with a detailed technical review.
               </p>
@@ -42,17 +41,17 @@ export default function ContactPage() {
             </div>
 
             {/* Right Column: Office Addresses & Direct Contact Info (5 cols) */}
-            <div className="lg:col-span-5 space-y-6">
+            <div className="lg:col-span-5 space-y-5">
               {/* Direct Communication Cards */}
-              <div className="bg-navy-900 text-white p-6 rounded-2xl shadow-lg border border-navy-800">
-                <h3 className="text-lg font-bold mb-4 border-b border-navy-800 pb-2">
+              <div className="bg-navy-950 text-white p-5 sm:p-6 rounded-2xl shadow-xl border border-navy-800">
+                <h3 className="text-base font-bold mb-3 border-b border-navy-800 pb-2">
                   Direct Contact Information
                 </h3>
 
-                <div className="space-y-4 text-xs sm:text-sm">
+                <div className="space-y-3.5 text-xs sm:text-sm">
                   {/* Phones */}
                   <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-navy-800 text-contourRed flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-lg bg-navy-850 text-contourRed flex items-center justify-center shrink-0 mt-0.5">
                       <Phone className="w-4 h-4" />
                     </div>
                     <div>
@@ -68,7 +67,7 @@ export default function ContactPage() {
 
                   {/* Email */}
                   <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-navy-800 text-contourRed flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-lg bg-navy-850 text-contourRed flex items-center justify-center shrink-0 mt-0.5">
                       <Mail className="w-4 h-4" />
                     </div>
                     <div>
@@ -84,7 +83,7 @@ export default function ContactPage() {
 
                   {/* WhatsApp */}
                   <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[#25D366]/20 text-[#25D366] flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-8 h-8 rounded-lg bg-[#25D366]/20 text-[#25D366] flex items-center justify-center shrink-0 mt-0.5">
                       <MessageCircle className="w-4 h-4" />
                     </div>
                     <div>
@@ -103,16 +102,16 @@ export default function ContactPage() {
               </div>
 
               {/* Verified Locations List */}
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {companyData.offices.map((office) => (
                   <div
                     key={office.name}
-                    className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-contourRed transition-colors"
+                    className="bg-white p-4 sm:p-4.5 rounded-xl border border-slate-200 shadow-sm hover:border-contourRed transition-colors"
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex items-center gap-2">
                         <MapPin className="w-4 h-4 text-contourRed shrink-0" />
-                        <h4 className="text-sm font-bold text-navy-900">{office.name}</h4>
+                        <h4 className="text-xs sm:text-sm font-bold text-navy-950">{office.name}</h4>
                       </div>
                       <a
                         href={office.mapUrl}
@@ -124,7 +123,7 @@ export default function ContactPage() {
                         <ExternalLink className="w-3 h-3" />
                       </a>
                     </div>
-                    <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed">
                       {office.address}
                     </p>
                     {office.phone && (

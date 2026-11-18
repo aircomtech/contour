@@ -18,7 +18,6 @@ export default function ProjectsPage() {
         subtitle="Delivering Landmark Pre-Engineered Buildings and Heavy Structural Steel Projects Across India."
         tagline="Portfolio of Excellence"
         breadcrumbs={[{ label: 'Projects' }]}
-        bgImage="/images/projects/project-peb-structure.jpg"
       />
 
       <ProjectsClient />

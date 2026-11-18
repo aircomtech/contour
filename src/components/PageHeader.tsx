@@ -12,7 +12,6 @@ interface PageHeaderProps {
   subtitle?: string;
   tagline?: string;
   breadcrumbs: BreadcrumbItem[];
-  bgImage?: string;
 }
 
 export default function PageHeader({
@@ -20,20 +19,19 @@ export default function PageHeader({
   subtitle,
   tagline = 'Contour Steel Engineering',
   breadcrumbs,
-  bgImage = '/images/hero/hero-arch-peb.jpg',
 }: PageHeaderProps) {
   return (
-    <div className="relative bg-navy-950 text-white py-14 sm:py-20 overflow-hidden">
-      {/* Background Image with Dark Blue Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-25 scale-105"
-        style={{ backgroundImage: `url(${bgImage})` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-900/90 to-navy-950" />
+    <div className="relative bg-gradient-to-r from-navy-950 via-navy-900 to-steel-950 text-white py-10 sm:py-14 overflow-hidden border-b border-navy-800">
+      {/* Clean Technical Engineering Pattern - NO BACKGROUND GHOST TEXT */}
+      <div className="absolute inset-0 bg-grid-pattern-dark opacity-15 pointer-events-none" />
+
+      {/* Subtle Accent Glows */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-steel-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-contourRed/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center space-x-1.5 text-xs text-slate-300 mb-3" aria-label="Breadcrumb">
+        <nav className="flex items-center space-x-1.5 text-xs text-slate-300 mb-2.5" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-white transition-colors">
             Home
           </Link>
@@ -57,13 +55,13 @@ export default function PageHeader({
         </span>
 
         {/* Title */}
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
           {title}
         </h1>
 
         {/* Subtitle */}
         {subtitle && (
-          <p className="mt-3 text-sm sm:text-base text-slate-200 max-w-2xl leading-relaxed">
+          <p className="mt-2 text-xs sm:text-sm lg:text-base text-slate-300 max-w-2xl leading-relaxed">
             {subtitle}
           </p>
         )}
