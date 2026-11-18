@@ -6,11 +6,11 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import {
   Phone,
-  MessageCircle,
   Menu,
   X,
   ChevronDown,
   ArrowRight,
+  MessageCircle,
 } from 'lucide-react';
 import { companyData } from '@/data/company';
 import { servicesData } from '@/data/services';
@@ -67,56 +67,56 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Sticky Dark Navy Header with Logo directly on Left beside Home */}
+      {/* Sticky Dark Navy Header with Large Logo & Single-Line Menu */}
       <header
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-navy-950/95 backdrop-blur-md shadow-2xl py-2'
-            : 'bg-navy-950 shadow-lg py-2.5 sm:py-3'
-        } border-b border-navy-800/80`}
+            ? 'bg-navy-950/98 backdrop-blur-md shadow-2xl py-2 sm:py-2.5'
+            : 'bg-navy-950 shadow-lg py-2.5 sm:py-3.5'
+        } border-b border-navy-800`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-          {/* Left: Logo (Placed beside Home in the header as requested) */}
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 lg:gap-4">
+          {/* Left: Prominent, Clearly Visible Logo (Increased Size, Zero Blank Padding) */}
           <Link href="/" className="flex items-center shrink-0 group">
-            <div className="relative h-11 w-44 sm:h-12 sm:w-52 transition-transform duration-200 group-hover:scale-[1.02]">
+            <div className="relative h-12 w-44 sm:h-14 sm:w-56 lg:h-14 lg:w-60 xl:h-16 xl:w-64 transition-transform duration-200 group-hover:scale-[1.02]">
               <Image
-                src="/images/logo-footer.png"
+                src="/images/logo-tight-white.png"
                 alt="Contour Steel Engineering India (P) Ltd."
                 fill
                 priority
-                sizes="(max-width: 640px) 176px, 208px"
+                sizes="(max-width: 640px) 176px, (max-width: 1024px) 224px, 256px"
                 className="object-contain object-left"
               />
             </div>
           </Link>
 
-          {/* Center/Desktop Navigation Links (Directly beside the logo) */}
-          <nav className="hidden lg:flex items-center space-x-0.5 xl:space-x-1">
+          {/* Center: Desktop Navigation Links (ALL IN ONE SINGLE LINE - whitespace-nowrap) */}
+          <nav className="hidden lg:flex items-center space-x-0.5 xl:space-x-1 shrink">
             {navLinks.map((link) => {
               const isActive =
                 link.href === '/'
                   ? pathname === '/'
                   : pathname.startsWith(link.href);
 
-              // About dropdown
+              // About Us Dropdown
               if (link.label === 'About Us') {
                 return (
                   <div
                     key={link.label}
-                    className="relative group"
+                    className="relative group shrink-0"
                     onMouseEnter={() => setAboutDropdown(true)}
                     onMouseLeave={() => setAboutDropdown(false)}
                   >
                     <Link
                       href={link.href}
-                      className={`flex items-center gap-1 px-3 py-2 text-xs xl:text-[13px] font-bold tracking-wider uppercase transition-all rounded ${
+                      className={`whitespace-nowrap flex items-center gap-1 px-2.5 py-1.5 xl:px-3 text-[12px] xl:text-[13px] font-bold tracking-normal uppercase transition-all rounded ${
                         isActive
                           ? 'text-white bg-navy-850 border-b-2 border-contourRed'
                           : 'text-slate-200 hover:text-white hover:bg-navy-850/80'
                       }`}
                     >
-                      <span>{link.label}</span>
-                      <ChevronDown className="w-3.5 h-3.5 opacity-70 group-hover:rotate-180 transition-transform duration-200" />
+                      <span className="whitespace-nowrap">{link.label}</span>
+                      <ChevronDown className="w-3.5 h-3.5 opacity-70 group-hover:rotate-180 transition-transform duration-200 shrink-0" />
                     </Link>
 
                     {aboutDropdown && (
@@ -126,7 +126,7 @@ export default function Navbar() {
                             <Link
                               key={item.label}
                               href={item.href}
-                              className="block px-4 py-2.5 text-xs font-semibold text-slate-200 hover:text-white hover:bg-navy-800 transition-colors"
+                              className="whitespace-nowrap block px-4 py-2.5 text-xs font-semibold text-slate-200 hover:text-white hover:bg-navy-800 transition-colors"
                             >
                               {item.label}
                             </Link>
@@ -138,25 +138,25 @@ export default function Navbar() {
                 );
               }
 
-              // Services dropdown
+              // Services Dropdown
               if (link.label === 'Our Services') {
                 return (
                   <div
                     key={link.label}
-                    className="relative group"
+                    className="relative group shrink-0"
                     onMouseEnter={() => setServicesDropdown(true)}
                     onMouseLeave={() => setServicesDropdown(false)}
                   >
                     <Link
                       href={link.href}
-                      className={`flex items-center gap-1 px-3 py-2 text-xs xl:text-[13px] font-bold tracking-wider uppercase transition-all rounded ${
+                      className={`whitespace-nowrap flex items-center gap-1 px-2.5 py-1.5 xl:px-3 text-[12px] xl:text-[13px] font-bold tracking-normal uppercase transition-all rounded ${
                         isActive
                           ? 'text-white bg-navy-850 border-b-2 border-contourRed'
                           : 'text-slate-200 hover:text-white hover:bg-navy-850/80'
                       }`}
                     >
-                      <span>{link.label}</span>
-                      <ChevronDown className="w-3.5 h-3.5 opacity-70 group-hover:rotate-180 transition-transform duration-200" />
+                      <span className="whitespace-nowrap">{link.label}</span>
+                      <ChevronDown className="w-3.5 h-3.5 opacity-70 group-hover:rotate-180 transition-transform duration-200 shrink-0" />
                     </Link>
 
                     {servicesDropdown && (
@@ -204,24 +204,24 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`px-3 py-2 text-xs xl:text-[13px] font-bold tracking-wider uppercase transition-all rounded ${
+                  className={`whitespace-nowrap px-2.5 py-1.5 xl:px-3 text-[12px] xl:text-[13px] font-bold tracking-normal uppercase transition-all rounded shrink-0 ${
                     isActive
                       ? 'text-white bg-navy-850 border-b-2 border-contourRed'
                       : 'text-slate-200 hover:text-white hover:bg-navy-850/80'
                   }`}
                 >
-                  {link.label}
+                  <span className="whitespace-nowrap">{link.label}</span>
                 </Link>
               );
             })}
           </nav>
 
           {/* Right: Quick Action Buttons & Get a Quote */}
-          <div className="flex items-center gap-2.5 sm:gap-3">
-            {/* Quick Call Icon (Desktop & Tablet) */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* Quick Call Icon (Desktop) */}
             <a
               href="tel:+919100996655"
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-navy-850 hover:bg-navy-800 border border-navy-700 text-slate-200 hover:text-white text-xs font-semibold transition-colors"
+              className="hidden 2xl:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-navy-850 hover:bg-navy-800 border border-navy-700 text-slate-200 hover:text-white text-xs font-semibold transition-colors whitespace-nowrap"
               title="Call Contour Steel"
             >
               <Phone className="w-3.5 h-3.5 text-contourRed" />
@@ -231,7 +231,7 @@ export default function Navbar() {
             {/* Red Get a Quote CTA Button */}
             <button
               onClick={() => setIsQuoteOpen(true)}
-              className="bg-contourRed hover:bg-contourRed-800 text-white text-xs font-bold uppercase tracking-wider px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-all duration-200 flex items-center gap-1.5 shadow-lg hover:shadow-xl active:scale-95"
+              className="bg-contourRed hover:bg-contourRed-800 text-white text-xs font-bold uppercase tracking-wider px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-all duration-200 flex items-center gap-1.5 shadow-lg hover:shadow-xl active:scale-95 whitespace-nowrap"
             >
               <span>Get a Quote</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -254,12 +254,12 @@ export default function Navbar() {
             <div className="absolute top-0 right-0 bottom-0 w-4/5 max-w-sm bg-navy-950 text-white shadow-2xl flex flex-col border-l border-navy-800">
               {/* Drawer Header */}
               <div className="p-4 bg-navy-900 flex items-center justify-between border-b border-navy-800">
-                <div className="relative h-9 w-36">
+                <div className="relative h-11 w-44">
                   <Image
-                    src="/images/logo-footer.png"
+                    src="/images/logo-tight-white.png"
                     alt="Contour Steel Engineering"
                     fill
-                    sizes="144px"
+                    sizes="176px"
                     className="object-contain object-left"
                   />
                 </div>
