@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import CtaSection from '@/components/CtaSection';
+import AnimatedNumber from '@/components/AnimatedNumber';
 import { facilitiesData } from '@/data/facilities';
 
 export const metadata: Metadata = {
@@ -54,11 +55,15 @@ export default function FacilitiesPage() {
 
               <div className="grid grid-cols-3 gap-3 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-center">
                 <div>
-                  <div className="text-xl sm:text-2xl font-black text-navy-950">1,500+ MT</div>
+                  <div className="text-xl sm:text-2xl font-black text-navy-950">
+                    <AnimatedNumber value={1500} suffix="+ MT" />
+                  </div>
                   <div className="text-[11px] text-slate-600">Monthly Capacity</div>
                 </div>
                 <div className="border-x border-slate-200 px-2">
-                  <div className="text-xl sm:text-2xl font-black text-navy-950">80 mm</div>
+                  <div className="text-xl sm:text-2xl font-black text-navy-950">
+                    <AnimatedNumber value={80} suffix=" mm" />
+                  </div>
                   <div className="text-[11px] text-slate-600">Max Plate Thickness</div>
                 </div>
                 <div>

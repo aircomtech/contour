@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import CtaSection from '@/components/CtaSection';
+import AnimatedNumber from '@/components/AnimatedNumber';
 import { whyPebData } from '@/data/whyPeb';
 
 export const metadata: Metadata = {
@@ -67,15 +68,21 @@ export default function WhyPebPage() {
 
               <div className="grid grid-cols-3 gap-3 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-center text-xs">
                 <div>
-                  <span className="text-xl sm:text-2xl font-black text-navy-950 block">50%</span>
+                  <span className="text-xl sm:text-2xl font-black text-navy-950 block">
+                    <AnimatedNumber value={50} suffix="%" />
+                  </span>
                   <span className="text-slate-600 text-[11px]">Faster Handover</span>
                 </div>
                 <div className="border-x border-slate-200 px-2">
-                  <span className="text-xl sm:text-2xl font-black text-navy-950 block">90m</span>
+                  <span className="text-xl sm:text-2xl font-black text-navy-950 block">
+                    <AnimatedNumber value={90} suffix="m" />
+                  </span>
                   <span className="text-slate-600 text-[11px]">Clear Column-Free Span</span>
                 </div>
                 <div>
-                  <span className="text-xl sm:text-2xl font-black text-navy-950 block">100%</span>
+                  <span className="text-xl sm:text-2xl font-black text-navy-950 block">
+                    <AnimatedNumber value={100} suffix="%" />
+                  </span>
                   <span className="text-slate-600 text-[11px]">Recyclable Green Steel</span>
                 </div>
               </div>

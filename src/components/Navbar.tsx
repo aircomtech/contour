@@ -67,13 +67,11 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Sticky Dark Navy Header with Large Logo & Single-Line Menu */}
+      {/* Sticky Solid Dark Navy Header (Always Sticks on Scroll, 100% Opaque Solid Background) */}
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-          isScrolled
-            ? 'bg-navy-950/98 backdrop-blur-md shadow-2xl py-2 sm:py-2.5'
-            : 'bg-navy-950 shadow-lg py-2.5 sm:py-3.5'
-        } border-b border-navy-800`}
+        className={`sticky top-0 z-50 w-full transition-all duration-200 bg-[#061325] border-b border-navy-800 ${
+          isScrolled ? 'py-2 shadow-2xl' : 'py-2.5 sm:py-3.5 shadow-lg'
+        }`}
       >
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 lg:gap-4">
           {/* Left: Prominent, Clearly Visible Logo (Increased Size, Zero Blank Padding) */}

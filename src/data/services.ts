@@ -7,7 +7,7 @@ export const servicesData: ServiceItem[] = [
     title: 'Pre-Engineered Buildings (PEB)',
     shortDesc: 'Custom PEB solutions for industrial & commercial use.',
     iconName: 'Warehouse',
-    bannerImage: '/images/hero/hero-arch-peb.jpg',
+    bannerImage: '/images/services/service-peb.jpg',
     fullDesc:
       'Contour Steel Engineering specializes in custom-designed Pre-Engineered Steel Buildings (PEB) optimized for maximum structural efficiency, rapid deployment, and architectural elegance. Engineered with high-strength structural steel, tapered I-beams, and precision cold-formed purlins, our PEB systems cater to demanding industrial, warehousing, and commercial environments across India.',
     features: [
@@ -84,7 +84,7 @@ export const servicesData: ServiceItem[] = [
     title: 'Structural Steel Engineering',
     shortDesc: 'Advanced engineering for complex structures.',
     iconName: 'GitBranch',
-    bannerImage: '/images/about/about-primary.jpg',
+    bannerImage: '/images/services/service-structural.jpg',
     fullDesc:
       'Contour Steel Engineering offers complete structural engineering services from initial concept and connection design to detailed 3D fabrication modeling. Our in-house engineering team uses cutting-edge BIM software like Tekla Structures and STAAD.Pro to deliver optimized, economical, and rigorously verified structural designs.',
     features: [
@@ -264,7 +264,7 @@ export const servicesData: ServiceItem[] = [
     title: 'Turnkey PEB Solutions',
     shortDesc: 'End-to-end project delivery from design to erection.',
     iconName: 'Handshake',
-    bannerImage: '/images/hero/hero-arch-peb.jpg',
+    bannerImage: '/images/services/service-turnkey.jpg',
     fullDesc:
       'Contour provides complete single-source turnkey construction solutions that take your project from empty land to fully operational facility. From geotechnical coordination, 3D architectural design, structural engineering, and automated in-house fabrication to safe site erection, roofing, and cladding, we manage every stage under one unified contract.',
     features: [

@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import CtaSection from '@/components/CtaSection';
+import AnimatedNumber from '@/components/AnimatedNumber';
 import { companyData, coreValuesData } from '@/data/company';
 
 export const metadata: Metadata = {
@@ -51,7 +52,9 @@ export default function AboutPage() {
               </div>
               {/* Floating Stat Badge */}
               <div className="absolute -bottom-5 -right-3 sm:right-4 bg-navy-950 text-white p-4 sm:p-5 rounded-xl shadow-2xl border-2 border-contourRed">
-                <div className="text-2xl sm:text-3xl font-black text-contourRed">19+</div>
+                <div className="text-2xl sm:text-3xl font-black text-contourRed">
+                  <AnimatedNumber value={19} suffix="+" />
+                </div>
                 <div className="text-[11px] font-bold text-slate-200 uppercase tracking-wider">
                   Years of Leadership
                 </div>
@@ -83,15 +86,21 @@ export default function AboutPage() {
               {/* 3 Metric Summary Boxes */}
               <div className="grid grid-cols-3 gap-3 p-3.5 bg-slate-50 border border-slate-200 rounded-xl">
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl font-black text-navy-950">{companyData.experienceYears}</div>
+                  <div className="text-xl sm:text-2xl font-black text-navy-950">
+                    <AnimatedNumber value={19} suffix="+" />
+                  </div>
                   <div className="text-[11px] text-slate-600 font-medium">Years Experience</div>
                 </div>
                 <div className="text-center border-x border-slate-200">
-                  <div className="text-xl sm:text-2xl font-black text-navy-950">{companyData.structuresDelivered}</div>
+                  <div className="text-xl sm:text-2xl font-black text-navy-950">
+                    <AnimatedNumber value={1100} suffix="+" />
+                  </div>
                   <div className="text-[11px] text-slate-600 font-medium">Delivered</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl font-black text-navy-950">{companyData.totalSqFt}</div>
+                  <div className="text-xl sm:text-2xl font-black text-navy-950">
+                    <AnimatedNumber value={30} suffix="M" />
+                  </div>
                   <div className="text-[11px] text-slate-600 font-medium">Sq. Ft. Built Area</div>
                 </div>
               </div>
