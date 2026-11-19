@@ -4,6 +4,7 @@ import AboutSection from '@/components/AboutSection';
 import WhyChooseSection from '@/components/WhyChooseSection';
 import FacilitiesSection from '@/components/FacilitiesSection';
 import ProjectsSection from '@/components/ProjectsSection';
+import GallerySection from '@/components/GallerySection';
 import CtaSection from '@/components/CtaSection';
 
 export default function HomePage() {
@@ -27,7 +28,10 @@ export default function HomePage() {
       {/* 6. Our Projects Section (4 featured project cards) */}
       <ProjectsSection />
 
-      {/* 7. Contact / CTA Section (Let's Build Your Next Project Together) */}
+      {/* 7. Industrial Project Gallery (Site execution photographs) */}
+      <GallerySection limit={8} />
+
+      {/* 8. Contact / CTA Section (Let's Build Your Next Project Together) */}
       <CtaSection />
     </>
   );

@@ -32,3 +32,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw upload source files (optimized versions reside in public/)
+/image copy *.png
+/LOGO CONTOUR STEEL ENGINEERING.pdf

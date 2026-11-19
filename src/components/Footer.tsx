@@ -114,6 +114,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/gallery" className="hover:text-white hover:underline transition-colors flex items-center gap-1.5">
+                  <span className="text-contourRed">›</span> Project Gallery (37 Photos)
+                </Link>
+              </li>
+              <li>
                 <Link href="/why-peb" className="hover:text-white hover:underline transition-colors flex items-center gap-1.5">
                   <span className="text-contourRed">›</span> Why PEB
                 </Link>

@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Cog, Image as ImageIcon, Phone } from 'lucide-react';
+import { Home, Cog, Building2, Image as ImageIcon, Phone } from 'lucide-react';
 
 export default function MobileBottomNav() {
   const pathname = usePathname();
@@ -11,13 +11,14 @@ export default function MobileBottomNav() {
   const navItems = [
     { label: 'Home', href: '/', icon: Home },
     { label: 'Services', href: '/services', icon: Cog },
-    { label: 'Projects', href: '/projects', icon: ImageIcon },
+    { label: 'Projects', href: '/projects', icon: Building2 },
+    { label: 'Gallery', href: '/gallery', icon: ImageIcon },
     { label: 'Contact', href: '/contact', icon: Phone },
   ];
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 shadow-lg px-2 py-1.5">
-      <div className="grid grid-cols-4 items-center">
+    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-slate-200 shadow-lg px-1 py-1">
+      <div className="grid grid-cols-5 items-center">
         {navItems.map((item) => {
           const isActive =
             item.href === '/'

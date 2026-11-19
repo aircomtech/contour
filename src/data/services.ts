@@ -41,6 +41,7 @@ export const servicesData: ServiceItem[] = [
       { label: 'Seismic Zone Compliance', value: 'Fully compliant up to Seismic Zone V' },
     ],
     relatedServices: ['industrial-steel-buildings', 'turnkey-peb-solutions', 'steel-fabrication'],
+    galleryImages: ['/images/gallery/gallery-50.jpg', '/images/gallery/gallery-31.jpg', '/images/gallery/gallery-38.jpg', '/images/gallery/gallery-57.jpg'],
   },
   {
     id: 'industrial-steel',
@@ -48,7 +49,7 @@ export const servicesData: ServiceItem[] = [
     title: 'Industrial Steel Buildings',
     shortDesc: 'Robust industrial structures for diverse applications.',
     iconName: 'Factory',
-    bannerImage: '/images/projects/project-industrial-warehouse.jpg',
+    bannerImage: '/images/services/service-industrial.jpg',
     fullDesc:
       'We engineer heavy-duty industrial steel buildings capable of withstanding extreme mechanical loads, heavy vibration, dynamic crane operation, and harsh environmental conditions. From chemical plants to metallurgical processing units, Contour builds durable, high-capacity facilities engineered for uninterrupted industrial production.',
     features: [
@@ -77,6 +78,7 @@ export const servicesData: ServiceItem[] = [
       { label: 'Corrosion Protection', value: 'Zinc chromate primer with aliphatic polyurethane topcoat' },
     ],
     relatedServices: ['pre-engineered-buildings', 'structural-steel-engineering', 'specialized-industrial-structures'],
+    galleryImages: ['/images/gallery/gallery-40.jpg', '/images/gallery/gallery-32.jpg', '/images/gallery/gallery-47.jpg', '/images/gallery/gallery-55.jpg'],
   },
   {
     id: 'structural-steel',
@@ -113,6 +115,7 @@ export const servicesData: ServiceItem[] = [
       { label: 'Output Formats', value: 'DSTV CNC, NC1, IFC, 3D DWG, Fabrication Blueprints' },
     ],
     relatedServices: ['pre-engineered-buildings', 'multi-storey-steel-buildings', 'steel-fabrication'],
+    galleryImages: ['/images/gallery/gallery-44.jpg', '/images/gallery/gallery-37.jpg', '/images/gallery/gallery-49.jpg', '/images/gallery/gallery-66.jpg'],
   },
   {
     id: 'multi-storey',
@@ -120,7 +123,7 @@ export const servicesData: ServiceItem[] = [
     title: 'Multi-Storey Steel Buildings',
     shortDesc: 'Multi-level structures with superior strength.',
     iconName: 'Building2',
-    bannerImage: '/images/projects/project-commercial-steel.jpg',
+    bannerImage: '/images/services/service-multi-storey.jpg',
     fullDesc:
       'Contour designs and constructs multi-level structural steel buildings that redefine commercial and industrial space efficiency. By utilizing steel columns, composite beams, and metal decking slabs, we enable rapid vertical construction with spacious column-free interiors and architectural flexibility.',
     features: [
@@ -149,6 +152,7 @@ export const servicesData: ServiceItem[] = [
       { label: 'Column Systems', value: 'Built-up box columns & heavy H-sections' },
     ],
     relatedServices: ['structural-steel-engineering', 'pre-engineered-buildings', 'turnkey-peb-solutions'],
+    galleryImages: ['/images/gallery/gallery-34.jpg', '/images/gallery/gallery-42.jpg', '/images/gallery/gallery-53.jpg', '/images/gallery/gallery-60.jpg'],
   },
   {
     id: 'specialized-structures',
@@ -156,7 +160,7 @@ export const servicesData: ServiceItem[] = [
     title: 'Specialized Industrial Structures',
     shortDesc: 'Tailored solutions for refineries & process plants.',
     iconName: 'Wrench',
-    bannerImage: '/images/projects/project-process-plant.jpg',
+    bannerImage: '/images/services/service-specialized.jpg',
     fullDesc:
       'Engineered specifically for oil & gas, chemical processing, refineries, and heavy infrastructure, our specialized structures demand the highest levels of metallurgical precision and strict tolerance compliance. We deliver pipe racks, silo support frames, furnace platforms, and high-elevation conveyor trestles.',
     features: [
@@ -185,6 +189,7 @@ export const servicesData: ServiceItem[] = [
       { label: 'Surface Preparation', value: 'Grit/Shot Blasting to Sa 2.5 / SSPC-SP 10' },
     ],
     relatedServices: ['steel-fabrication', 'steel-erection-installation', 'structural-steel-engineering'],
+    galleryImages: ['/images/gallery/gallery-63.jpg', '/images/gallery/gallery-39.jpg', '/images/gallery/gallery-54.jpg', '/images/gallery/gallery-64.jpg'],
   },
   {
     id: 'steel-fabrication',
@@ -192,7 +197,7 @@ export const servicesData: ServiceItem[] = [
     title: 'Steel Fabrication',
     shortDesc: 'Precision fabrication with advanced technology.',
     iconName: 'Flame',
-    bannerImage: '/images/facilities/facility-fabrication.jpg',
+    bannerImage: '/images/services/service-fabrication.jpg',
     fullDesc:
       'At our state-of-the-art manufacturing plant in Seriguda, we convert raw steel plates and sections into high-precision structural members. Equipped with multi-torch CNC cutting machines, automatic H-beam assembly lines, and submerged arc welding gantries, we fabricate over 1,500 metric tons of structural steel every month with unwavering consistency.',
     features: [
@@ -221,6 +226,7 @@ export const servicesData: ServiceItem[] = [
       { label: 'Welding Technology', value: 'Submerged Arc Welding (SAW), GMAW / MIG' },
     ],
     relatedServices: ['facilities', 'steel-erection-installation', 'pre-engineered-buildings'],
+    galleryImages: ['/images/gallery/gallery-33.jpg', '/images/gallery/gallery-35.jpg', '/images/gallery/gallery-58.jpg', '/images/gallery/gallery-61.jpg'],
   },
   {
     id: 'steel-erection',
@@ -228,7 +234,7 @@ export const servicesData: ServiceItem[] = [
     title: 'Steel Erection & Installation',
     shortDesc: 'Safe and efficient on-site execution.',
     iconName: 'ShieldCheck',
-    bannerImage: '/images/facilities/facility-assembly.jpg',
+    bannerImage: '/images/services/service-erection.jpg',
     fullDesc:
       'Safe, rapid, and precise on-site steel erection is central to our turnkey reputation. Our certified erection engineers and safety officers follow strict Zero Harm HSE protocols, utilizing heavy hydraulic mobile cranes, boom lifts, and precision optical survey instruments to assemble complex structures on schedule.',
     features: [
@@ -257,6 +263,7 @@ export const servicesData: ServiceItem[] = [
       { label: 'Site HSE Compliance', value: '100% PPE, fall arrest systems, harness lifelines' },
     ],
     relatedServices: ['turnkey-peb-solutions', 'steel-fabrication', 'pre-engineered-buildings'],
+    galleryImages: ['/images/gallery/gallery-48.jpg', '/images/gallery/gallery-36.jpg', '/images/gallery/gallery-52.jpg', '/images/gallery/gallery-56.jpg'],
   },
   {
     id: 'turnkey-peb',
@@ -293,5 +300,6 @@ export const servicesData: ServiceItem[] = [
       { label: 'Quality Assurance', value: 'Multi-stage QA/QC inspection signoffs' },
     ],
     relatedServices: ['pre-engineered-buildings', 'steel-erection-installation', 'quality-assurance'],
+    galleryImages: ['/images/gallery/gallery-46.jpg', '/images/gallery/gallery-41.jpg', '/images/gallery/gallery-59.jpg', '/images/gallery/gallery-67.jpg'],
   },
 ];

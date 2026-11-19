@@ -12,6 +12,7 @@ import {
   Phone,
   Layers,
   Wrench,
+  Sparkles,
 } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import CtaSection from '@/components/CtaSection';
@@ -164,6 +165,41 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
                   </table>
                 </div>
               </div>
+
+              {/* Related Project Site Photographs */}
+              {service.galleryImages && service.galleryImages.length > 0 && (
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-base sm:text-lg font-bold text-navy-950 flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-contourRed" />
+                      <span>Project Site Photographs</span>
+                    </h3>
+                    <Link
+                      href="/gallery"
+                      className="text-xs font-bold text-contourRed hover:underline flex items-center gap-1"
+                    >
+                      <span>View Full Gallery (37 Photos)</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    {service.galleryImages.map((imgSrc, i) => (
+                      <div
+                        key={i}
+                        className="relative h-28 sm:h-36 rounded-xl overflow-hidden group shadow border border-slate-200 bg-navy-950"
+                      >
+                        <Image
+                          src={imgSrc}
+                          alt={`${service.title} Site Photograph ${i + 1}`}
+                          fill
+                          sizes="(max-width: 640px) 50vw, 25vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Sidebar Column (4 cols) */}

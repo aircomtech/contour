@@ -11,6 +11,7 @@ export interface ServiceItem {
   capabilities: string[];
   specifications: { label: string; value: string }[];
   relatedServices?: string[];
+  galleryImages?: string[];
 }
 
 export interface ProjectItem {

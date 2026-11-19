@@ -61,6 +61,7 @@ export default function Navbar() {
     { label: 'Our Facilities', href: '/facilities' },
     { label: 'Quality Assurance', href: '/quality-assurance' },
     { label: 'Projects', href: '/projects' },
+    { label: 'Gallery', href: '/gallery' },
     { label: 'Why PEB', href: '/why-peb' },
     { label: 'Contact Us', href: '/contact' },
   ];
@@ -76,13 +77,13 @@ export default function Navbar() {
         <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 xl:gap-4 w-full">
           {/* Left: Prominent, Clearly Visible Logo (Scaled Appropriately) */}
           <Link href="/" className="flex items-center shrink-0 group">
-            <div className="relative h-11 w-40 sm:h-13 sm:w-52 xl:h-14 xl:w-56 2xl:h-15 2xl:w-60 transition-transform duration-200 group-hover:scale-[1.02]">
+            <div className="relative h-10 w-36 sm:h-12 sm:w-48 xl:h-13 xl:w-52 2xl:h-14 2xl:w-56 transition-transform duration-200 group-hover:scale-[1.02]">
               <Image
                 src="/images/logo-tight-white.png"
                 alt="Contour Steel Engineering India (P) Ltd."
                 fill
                 priority
-                sizes="(max-width: 640px) 160px, (max-width: 1280px) 208px, 240px"
+                sizes="(max-width: 640px) 144px, (max-width: 1280px) 208px, 240px"
                 className="object-contain object-left"
               />
             </div>
@@ -215,7 +216,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right: Quick Action Buttons & Get a Quote */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Quick Call Icon (Desktop) */}
             <a
               href="tel:+919100996655"
@@ -226,22 +227,23 @@ export default function Navbar() {
               <span>+91 91009 96655</span>
             </a>
 
-            {/* Red Get a Quote CTA Button */}
+            {/* Red Get a Quote CTA Button (Responsive Sizing to avoid mobile overflow) */}
             <button
               onClick={() => setIsQuoteOpen(true)}
-              className="bg-contourRed hover:bg-contourRed-800 text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg transition-all duration-200 flex items-center gap-1 sm:gap-1.5 shadow-lg hover:shadow-xl active:scale-95 whitespace-nowrap shrink-0"
+              className="bg-contourRed hover:bg-contourRed-800 text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2.5 sm:px-4 py-1.5 sm:py-2.5 rounded-lg transition-all duration-200 flex items-center gap-1 sm:gap-1.5 shadow-lg hover:shadow-xl active:scale-95 whitespace-nowrap shrink-0"
             >
-              <span>Get a Quote</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Get a Quote</span>
+              <span className="sm:hidden">Get Quote</span>
+              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             </button>
 
             {/* Mobile / Tablet Hamburger Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2 text-slate-200 hover:text-white rounded-lg hover:bg-navy-850 focus:outline-none"
+              className="xl:hidden p-1.5 sm:p-2 text-slate-200 hover:text-white rounded-lg hover:bg-navy-850 focus:outline-none"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>
